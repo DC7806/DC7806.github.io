@@ -20,6 +20,8 @@ set :css_dir,    'assets/stylesheets'
 set :images_dir, 'assets/images'
 set :js_dir,     'assets/javascripts'
 
+activate :sprockets
+
 # With alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
 

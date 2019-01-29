@@ -1,4 +1,4 @@
-html
+html[lang="en"]
   head
     meta[charset="utf-8"]
     meta[http-equiv="x-ua-compatible" content="ie=edge"]
@@ -6,6 +6,6 @@ html
     title
       = current_page.data.title || "Middleman"
     = stylesheet_link_tag 'application'
-    = javascript_include_tag 'application'
   body
     = yield
+    = javascript_include_tag 'application'
