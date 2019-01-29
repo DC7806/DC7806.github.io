@@ -5,7 +5,7 @@ html
     meta[name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"]
     title
       = current_page.data.title || "Middleman"
-    = stylesheet_link_tag 'application'
-    = javascript_include_tag 'application'
+    = stylesheet_link_tag 'application', relative: true
+    = javascript_include_tag 'application', relative: true
   body
     = yield
