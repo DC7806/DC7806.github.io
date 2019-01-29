@@ -51,10 +51,12 @@ configure :development do
   activate :livereload do |site|
     site.livereload_css_target = "assets/css/application.css.scss"
   end
+  activate :relative_assets
 end
 
 configure :build do
   activate :minify_css
   activate :minify_javascript
   activate :gzip
+  activate :relative_assets
 end
