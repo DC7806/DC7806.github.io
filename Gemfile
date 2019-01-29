@@ -4,6 +4,7 @@ gem 'middleman', '~> 4.2'
 gem 'middleman-autoprefixer', '~> 2.7'
 gem 'middleman-livereload', '~> 3.4', '>= 3.4.6'
 gem 'middleman-sprockets', '~> 4.1', '>= 4.1.1'
+gem 'middleman-deploy', '~> 1.0'
 
 gem 'slim', '~> 4.0', '>= 4.0.1'
 gem 'sass', '~> 3.7', '>= 3.7.3'

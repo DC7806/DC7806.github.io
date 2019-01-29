@@ -16,9 +16,10 @@ page '/*.json', layout: false
 page '/*.txt', layout: false
 
 
-set :css_dir,    'assets/stylesheets'
-set :images_dir, 'assets/images'
-set :js_dir,     'assets/javascripts'
+set :css_dir,        'assets/stylesheets'
+set :images_dir,     'assets/images'
+set :js_dir,         'assets/javascripts'
+set :relative_links, true
 
 activate :sprockets
 
@@ -53,7 +54,6 @@ configure :development do
   activate :livereload do |site|
     site.livereload_css_target = "assets/css/application.css.scss"
   end
-  activate :relative_assets
 end
 
 configure :build do
@@ -61,4 +61,11 @@ configure :build do
   activate :minify_javascript
   activate :gzip
   activate :relative_assets
+end
+
+activate :deploy do |deploy|
+  deploy.deploy_method = :git
+  deploy.remote = 'git@github.com:username/dc7806.github.io.git'
+  deploy.branch = 'master'
+  deploy.build_before = true
 end
