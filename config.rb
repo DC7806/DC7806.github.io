@@ -1,3 +1,5 @@
+require 'slim'
+
 # Activate and configure extensions
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
 
@@ -12,6 +14,11 @@ end
 page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
+
+
+set :css_dir,    'assets/stylesheets'
+set :images_dir, 'assets/images'
+set :js_dir,     'assets/javascripts'
 
 # With alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
@@ -40,7 +47,14 @@ page '/*.txt', layout: false
 # Build-specific configuration
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
 
-# configure :build do
-#   activate :minify_css
-#   activate :minify_javascript
-# end
+configure :development do
+  activate :livereload do |site|
+    site.livereload_css_target = "assets/css/application.css.scss"
+  end
+end
+
+configure :build do
+  activate :minify_css
+  activate :minify_javascript
+  activate :gzip
+end
