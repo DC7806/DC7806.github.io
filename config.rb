@@ -63,9 +63,6 @@ configure :build do
   activate :relative_assets
 end
 
-activate :deploy do |deploy|
-  deploy.deploy_method = :git
-  deploy.remote = 'git@github.com:username/dc7806.github.io.git'
-  deploy.branch = 'master'
-  deploy.build_before = true
+activate :gh_pages do |gh_pages|
+  gh_pages.remote = 'git@github.com:DC7806/DC7806.github.io.git'
 end
